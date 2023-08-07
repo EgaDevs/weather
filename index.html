@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./assets/img/weathericon.webp">
+    <title>Weather</title>
+</head> 
+<body>
+<div class="container">
+        <div class="intro">
+            <a href="#"><h2 style="color:#fff;">WEATHER</h2></a>
+            <img class="icon" src="assets/img/weathericon.webp" alt="">
+            <div class="searcher">
+                <input class="search" id="search" type="text">
+                    <button class="search-link"><i class='bx bx-search-alt-2'></i></button>
+            </div>
+        </div>
+
+        <div class="tabs" id="tabs">
+            <div class="tabs__header">
+                <div class="tabs__header-item">
+                    <button type="button" class="tabs__header-btn">Today</button>
+                </div>
+                <div class="tabs__header-item">
+                    <button type="button" class="tabs__header-btn">5-day forecast</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="inf">
+                <p class="info">Этот сайт не работает, так как отключен платный API от OpenWeather</p>
+            </div>
+            <div class="tabs__content-item">
+                <div class="current">
+                    <div class="current__main">
+                        <div class="current__intro">
+                            <div class="current__intro-title"><h2>CURRENT WEATHER</h2></div>
+                            <div class="current__intro-date"><p id="date"></p></div>
+                        </div>
+                        <div class="current__info">
+                            <div class="current__info-img">
+                                <img id="nowImg" src="" alt="">
+                                <p id="nowText"></p>
+                            </div>
+                            <div class="current__info-deg">
+                                <p id="currentDegree" class="current__info-degree"></p>
+                                <p id="feelDegree"></p>
+                            </div>
+                            <div class="current__info-descr">
+                                <p id="rise"></p>
+                                <p id="sett"></p>
+                                <p id="dur"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+    
+                <div class="hourly">
+                    <div class="hourly__header">
+                        <div class="hourly__header-item">
+                            <h3 class="header__hourly-title">Today</h3>
+                        </div>
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                        
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                        <div class="hourly__header-item">
+                            <p class="hourly__header-time">--</p>
+                            <img src="./assets/img/sunny.png" alt="" id="hourImg">
+                        </div>
+                    </div>
+        
+                    <div class="hourly__main">
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text">Forecast</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="hourDescr">--</p>
+                        </div>
+                    </div>
+                    <div class="hourly__main">
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text">Temp(°C)</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="celcium">--</p>
+                        </div>
+                    </div>
+                    <div class="hourly__main">
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text">RealFeel</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="feel">--</p>
+                        </div>
+                    </div>
+                    <div class="hourly__main">
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text">Wind(km/h)</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                        <div class="hourly__main-item">
+                            <p class="hourly__main-text" id="speed">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+        <div class="tabs__content-item">
+            <div class="columns">
+                <div class="columns__item" id="changer">
+                    <div class="columns__item-header" id="dayWeek"></div>
+                    <div class="columns__item-date" id="daysDate"></div>
+                    <img src="./assets/img/sunny.png" alt="" id="daysImg">
+                    <div class="columns__item-degrees" id="daysTemp"></div>
+                    <div class="columns__item-weather" id="daysDescr"></div>
+                </div>
+                <div class="columns__item" id="changer">
+                    <div class="columns__item-header" id="dayWeek"></div>
+                    <div class="columns__item-date" id="daysDate"></div>
+                    <img src="./assets/img/sunny.png" alt="" id="daysImg">
+                    <div class="columns__item-degrees" id="daysTemp"></div>
+                    <div class="columns__item-weather" id="daysDescr"></div>
+                </div>
+                <div class="columns__item" id="changer">
+                    <div class="columns__item-header" id="dayWeek"></div>
+                    <div class="columns__item-date" id="daysDate"></div>
+                    <img src="./assets/img/sunny.png" alt="" id="daysImg">
+                    <div class="columns__item-degrees" id="daysTemp"></div>
+                    <div class="columns__item-weather" id="daysDescr"></div>
+                </div>
+                <div class="columns__item" id="changer">
+                    <div class="columns__item-header" id="dayWeek"></div>
+                    <div class="columns__item-date" id="daysDate"></div>
+                    <img src="./assets/img/sunny.png" alt="" id="daysImg">
+                    <div class="columns__item-degrees" id="daysTemp"></div>
+                    <div class="columns__item-weather" id="daysDescr"></div>
+                </div>
+                <div class="columns__item" id="changer">
+                    <div class="columns__item-header" id="dayWeek"></div>
+                    <div class="columns__item-date" id="daysDate"></div>
+                    <img src="./assets/img/sunny.png" alt="" id="daysImg">
+                    <div class="columns__item-degrees" id="daysTemp"></div>
+                    <div class="columns__item-weather" id="daysDescr"></div>
+                </div>
+            </div>
+            
+            
+            <div class="five">
+                    <div class="five__header">
+                        <div class="five__header-item">
+                            <h3 class="header__five-title">Today</h3>
+                        </div>
+                        <div class="five__header-item">
+                            <p class="five__header-time">Morning</p>
+                            <img src="./assets/img/clouds.png" alt="" id="fiveImg">
+                        </div>
+                        <div class="five__header-item">
+                            <p class="five__header-time">Afternoon</p>
+                            <img src="./assets/img/clouds.png" alt="" id="fiveImg">
+                        </div>
+                        <div class="five__header-item">
+                            <p class="five__header-time">Evening</p>
+                            <img src="./assets/img/clouds.png" alt="" id="fiveImg">
+                        </div>
+                        <div class="five__header-item">
+                            <p class="five__header-time">Night</p>
+                            <img src="./assets/img/clouds.png" alt="" id="fiveImg">
+                        </div>
+                    </div>
+                    
+                    <div class="five__main">
+                        <div class="five__main-item">
+                            <p class="five__main-text">Forecast</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveDescr">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveDescr">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveDescr">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveDescr">--</p>
+                        </div>
+                    </div>
+                    <div class="five__main">
+                        <div class="five__main-item">
+                            <p class="five__main-text">Temp(°C)</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveTemp">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveTemp">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveTemp">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveTemp">--</p>
+                        </div>
+                    </div>
+                    <div class="five__main">
+                        <div class="five__main-item">
+                            <p class="five__main-text">RealFeel</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveFeel">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveFeel">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveFeel">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveFeel">--</p>
+                        </div>
+                    </div>
+                    <div class="five__main">
+                        <div class="five__main-item">
+                            <p class="five__main-text">Wind(km/h)</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveSpeed">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveSpeed">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveSpeed">--</p>
+                        </div>
+                        <div class="five__main-item">
+                            <p class="five__main-text" id="fiveSpeed">--</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>       
+    </div>
+        <div class="error__page">
+                <img class="notfound" src="assets/img/not-found.webp" alt="">
+                <p>Your city could not be found. <br> Please enter a different location.</p>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
